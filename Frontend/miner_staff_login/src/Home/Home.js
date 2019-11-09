@@ -1,4 +1,5 @@
 import React from 'react'
+import './Home.css';
 class Home extends React.Component {
    constructor(props) {
       super(props);
@@ -32,7 +33,7 @@ class Home extends React.Component {
     }
     componentDidMount() {
  //alert(' UserName: ' + this.state.userName+'Password: ' + this.state.password);
- fetch('http://localhost:3001/inventry', {
+ fetch('http://192.168.8.100:3001/inventry', {
    method: 'GET'
 })
 .then((response) => response.json())
@@ -55,7 +56,7 @@ class Home extends React.Component {
     handleSubmit(event) {
       //alert(' UserName: ' + this.state.userName+'Password: ' + this.state.password);
       console.log(this.state.description);
-      fetch('http://localhost:3001/inventry/addNew/?itemCode='+this.state.itemCode+'&description='+this.state.description+'&qty='+this.state.qty+'', {
+      fetch('http://192.168.8.100:3001/inventry/addNew/?itemCode='+this.state.itemCode+'&description='+this.state.description+'&qty='+this.state.qty+'', {
         method: 'GET'
      })
      .then((response) => response.json())
@@ -85,25 +86,32 @@ class Home extends React.Component {
     } else {
       return (
         <div>
+          <div class="card">
+          <div >
         <h1>Add New Inventry...</h1>
         <form onSubmit={this.handleSubmit}>
     <label>
       Item Code:
-      <input type="text" value={this.state.itemCode} onChange={this.handleChangeItemCode} />
+      <input class='inpt' type="text" value={this.state.itemCode} onChange={this.handleChangeItemCode} />
     </label>
     <br/>
     <label>
       Description:
-      <input type="text" value={this.state.description} onChange={this.handleChangeDescription} />
+      <input class='inpt' type="text" value={this.state.description} onChange={this.handleChangeDescription} />
     </label>
     <br/>
     <label>
      Qty:
-      <input type="text" value={this.state.qty} onChange={this.handleChangeQty} />
+      <input class='inpt' type="text" value={this.state.qty} onChange={this.handleChangeQty} />
     </label>
-    <button id="b1" onClick ={this.try}>Click me</button>        
+    <button class='sbmt' id="b1" onClick ={this.try}>Add</button>        
   </form>
-  <table>
+  </div> 
+  </div> 
+
+  <br/>
+  <br/>
+  <table id="items">
     <thead>
     <tr>
       <th>ItemCode</th>
@@ -130,7 +138,8 @@ class Home extends React.Component {
       
           </table>
        
-        </div>
+          </div> 
+         
  
       );
     }

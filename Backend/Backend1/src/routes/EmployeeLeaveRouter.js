@@ -18,17 +18,20 @@ EmployeeLeaveRouter.get("/", async (req, res) => {
 EmployeeLeaveRouter.post("/", async (req, res) => {
   const {
     employeeId,
+    type,
     leaveStart,
     leaveEnd,
     reason,
     status,
     approvedBy
   } = req.body;
+  
   const leaveRequest = new Leave({
     employeeId,
     leaveStart,
     leaveEnd,
     reason,
+    type,
     status,
     approvedBy
   });

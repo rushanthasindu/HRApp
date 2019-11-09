@@ -22,6 +22,10 @@ const employeeLeaveSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  type: {
+    type: String
+   
+  },
   status: {
     type: String,
     required: true,

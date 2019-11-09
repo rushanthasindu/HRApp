@@ -1,4 +1,5 @@
 import React,{Component} from 'react';
+import './EmpReport.css'
 
 class App extends React.Component {
    state = {
@@ -8,7 +9,7 @@ class App extends React.Component {
 
   componentDidMount() {
    //alert(' UserName: ' + this.state.userName+'Password: ' + this.state.password);
-   fetch('http://localhost:8000/employee/', {
+   fetch('http://192.168.8.100:8000/employee/', {
      method: 'GET'
   })
   .then((response) => response.json())
@@ -30,7 +31,7 @@ class App extends React.Component {
    render() {
       return (
          <div>
-            <table>
+            <table  id="items">
     <thead>
     <tr>
       <th>Employee ID</th>

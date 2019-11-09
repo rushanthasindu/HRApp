@@ -18,28 +18,28 @@ class Home extends Component {
   return (
     <Router>
       <div>
-        <ul>
-          <li>
+    
+          <button >
             <Link to="/EmpReport">EmpReport</Link>
-          </li>
-          <li>
+          </button>
+          <button>
             <Link to="/LeaveReport">Leave Report</Link>
-          </li>
-          <li>
+          </button>
+          <button>
             <Link to="/InventryReport">Inventry Report</Link>
-          </li>
+          </button>
 
-          <li>
+          <button>
             <Link to="/EmpReport2">Emp Report 2</Link>
-          </li>
-          <li>
+          </button>
+          <button>
             <Link to="/LeaveReport2">Leave Report 2</Link>
-          </li>
-          <li>
+          </button>
+          <button>
             <Link to="/InventryReport2">Inventry Report 2 </Link>
-          </li>
+          </button>
          
-        </ul>
+    
 
         <hr />
 

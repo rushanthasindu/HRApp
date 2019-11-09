@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route} from 'react-router-dom'
 import Home from"./Home/Home"
+import './App.css';
+import logo from './logo.png'; // with import
+
 
 class Login extends Component {
     constructor(props) {
@@ -32,7 +35,7 @@ class Login extends Component {
       }
       handleSubmit(event) {
         //alert(' UserName: ' + this.state.userName+'Password: ' + this.state.password);
-        fetch('http://localhost:3001/users/auth/?email='+this.state.userName+'&password='+this.state.password+'', {
+        fetch('http://192.168.8.100:3001/users/auth/?email='+this.state.userName+'&password='+this.state.password+'', {
           method: 'GET'
        })
        .then((response) => response.json())
@@ -58,21 +61,31 @@ class Login extends Component {
   render() {
     if (this.state.auth){
      return (
-        <form onSubmit={this.handleSubmit}>
-        <label>
-          Name:
-          <input type="text" value={this.state.userName} onChange={this.handleChangeUserName} />
-        </label>
+       <div>
+         <br/> <br/>
+         <br/>
+         <br/>
+      <img class='center' src={logo} />
+      <h1 class='center'>Miner Staff Login</h1>
+      <div id="login">
+
+        <form name='form-login' onSubmit={this.handleSubmit}>
+        <span class="fontawesome-user"></span>
+      
+          <input type="text" id="user" placeholder="Username" value={this.state.userName} onChange={this.handleChangeUserName} />
+        
         <br/>
-        <label>
-         PASSWORD:
+        <span class="fontawesome-lock"></span>
+         
           <input type="password" value={this.state.password} onChange={this.handleChangePassword} />
-        </label>
-        <button id="b1" onClick ={this.try}>Click me</button>
+       
+        <button id="b1" onClick ={this.try}>Login</button>
         {/* <Route path="/hello" component={Home}/> */}
 
         
       </form>
+      </div>
+      </div>
      )}
      else return(<Route path="/hello" component={Home}/>)
   }

@@ -8,7 +8,7 @@ class App extends React.Component {
 
   componentDidMount() {
    //alert(' UserName: ' + this.state.userName+'Password: ' + this.state.password);
-   fetch('http://localhost:8000/leave/', {
+   fetch('http://192.168.8.100:8000/leave/', {
      method: 'GET'
   })
   .then((response) => response.json())
@@ -28,7 +28,7 @@ class App extends React.Component {
         }
         getEmp(id) {
          //alert(' UserName: ' + this.state.userName+'Password: ' + this.state.password);
-         fetch('http://localhost:8000/leave/'+id, {
+         fetch('http://192.168.8.100:8000/leave/', {
            method: 'GET'
         })
         .then((response) => response.json())
@@ -50,14 +50,14 @@ class App extends React.Component {
    render() {
       return (
          <div>
-            <table>
+            <table id="items">
     <thead>
     <tr>
       <th>Employee ID</th>
       <th>Name</th>
-      <th>Address</th>
-      <th>Email</th>
-
+      <th>Start Date</th>
+      <th>End Date</th>
+      <th>Reason</th>
       <th>Status</th>
       
 
@@ -79,11 +79,13 @@ class App extends React.Component {
           <td >
           {item.leaveEnd} 
           </td>
-          
+         
           <td >
               {item.reason} 
           </td>
-          
+           <td >
+          {item.status} 
+          </td>
           </tr> 
           ))} 
 
