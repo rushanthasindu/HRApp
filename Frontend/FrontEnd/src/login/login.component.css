@@ -1,0 +1,11 @@
+.login-margin{
+    margin-top: 100px;
+    display: 'flex';
+    background-color: rgb(0, 0, 0);
+    /* background: 'linear-gradient(to right bottom, #430089, #82ffa1)'; */
+}
+body {
+    /* background-image: linear-gradient(#fcfcfc3b 0%, #00c5fb 100%); */
+    /* background-color: rgb(0, 0, 0); */
+    
+  }
